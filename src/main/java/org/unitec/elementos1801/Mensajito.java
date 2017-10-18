@@ -24,6 +24,11 @@ public class Mensajito {
     
     private String titulo;
     private String cuerpo;
+
+    @Override
+    public String toString() {
+        return "Mensajito{" + "id=" + id + ", titulo=" + titulo + ", cuerpo=" + cuerpo + '}';
+    }
     
     //constructores
 
