@@ -9,6 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Elementos1801Application implements CommandLineRunner {
 
     @Autowired RepositorioMensajito repoMensa;
+    @Autowired RepositorioUsuario repoUsuario;
+    @Autowired RepositorioDireccion repoDireccion;
+
 	public static void main(String[] args) {
 		SpringApplication.run(Elementos1801Application.class, args);
 	}
@@ -44,5 +47,17 @@ public class Elementos1801Application implements CommandLineRunner {
            for(Mensajito mensa : repoMensa.findByTitulo("Nuevo titulo")){
                 System.out.println(mensa);
             }*/
+        
+        //para el repositorio usuario, generamos el primer usuario
+        //Usuario u = new Usuario(15254L, "Eduardo fermin", "kiqo95@hotmail.com");
+        //repoUsuario.save(u);
+        
+        //para el repositorio direccion, generamos direccion
+        //Direccion d = new Direccion(new Usuario(15254L), "C. laguna", 55070, "Ecatepec");
+        //repoDireccion.save(d);
+        
+        //haremos el join
+        Direccion d2 = repoDireccion.findOne(1L);
+        System.out.println("Correo: " + d2.getU().getEmail() + "CP: " + d2.getMunicipio());
     }
 }
