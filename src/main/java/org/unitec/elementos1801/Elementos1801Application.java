@@ -57,7 +57,7 @@ public class Elementos1801Application implements CommandLineRunner {
         //repoDireccion.save(d);
         
         //haremos el join
-        Direccion d2 = repoDireccion.findOne(1L);
-        System.out.println("Correo: " + d2.getU().getEmail() + "CP: " + d2.getMunicipio());
+        //Direccion d2 = repoDireccion.findOne(1L);
+        //System.out.println("Correo: " + d2.getU().getEmail() + "CP: " + d2.getMunicipio());
     }
 }
